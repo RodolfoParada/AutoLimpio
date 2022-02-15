@@ -1,16 +1,17 @@
-!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8"/>
     <title>Evaluación Practica</title>
-    <link rel="stylesheet" href="estilo.css"/>
+    <link rel="stylesheet" href="formulario.css"/>
+    
 </head>
 <body>
 
 
 
     <!--recuerden siempre envolver el formulario con la etiqueta form-->
-  
+    <div class  ="container">
     <form action="" name="formulario"method="GET"><!--los métodos más habituales son GET y Post-->
         <div class="formulario">
             <form action="" method="get">
@@ -29,13 +30,14 @@
                 
             </div>
 
+
             <div class="form-line">
             <label for="Apellido">Apellido</label>
             <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido"/>
              </div>
 
                 <div class="form-line">
-                    <label for="Comuna">Comuna</label>
+                    <label for="Comuna" id="comuna">Comuna</label>
                     <select name="Comuna">
                         <option value="0"></option> 
                         <option value="1">Santiago</option> 
@@ -51,7 +53,7 @@
                 <br/>
                  
                 <div class="form-line">
-                    <label for="TipoVehiculo">TipoVehiculo</label>
+                    <label for="TipoVehiculo" id="TipoVehiculo">TipoVehiculo</label>
                     <select name="Comuna">
                         <option value="0"></option> 
                         <option value="1">Furgón</option> 
@@ -76,25 +78,37 @@
                  <input type="text" id="RevisionTecnica" name="RevisionTecnica" placeholder="Ingrese revision tecnica al día"/>
                 <br/> </br>  
                 </div>
+           
               
         
         <h3>Seleccione el tipo de servicio que requiere.</h3>
         <h4>*puede seleccionar ambas alternativas con Ctrl*<h4>
         <h4>Lista de Precios<h4></h4>
 
-            <select name="combo" multiple>
-                <!-- Formato alternativo con atributo label -->
-                <optgroup label="Lavado exterior ">
-                  <option value="1" label="7000"> </option>
-                </optgroup>
-            
-                <optgroup label="Lavado motor">
-                  <option value="2" label="5000"> </option>
+        <div class= "form-check">
+            <input class="form-check-input" type="checkbox" value="7000" id="lavadoExterior">
+                <label class="form-check-label" for="lavadoMotor">
+                  lavado motor $7.000.-
+                </label>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" value="5000" id="lavadoMotor">
+                <label class="form-check-label" for="lavadoMotor">
+                  lavado motor $5.000.-
+                </label>
+                  </div>
         
-                </optgroup>
-              </select> 
+              <button id="btncalcular" type="button">Calcular</button>
+                </form>
+                <div class="row">
+                    <div class="col-1">Neto</div>
+                    <div id="neto" class="col-1">$</div>
+                    <div class="col-1">IVA</div>
+                    <div id="iva"class="col-1">$</div>
+                    <div class="col-1">TOTAL</div>
+                    <div id="total"class="col-1">$</div>
 
-        <div>
+                </div>
+            </div>
         <!-- lavado exterior con un valor de $ 7000.
             lavado de motor con un valor de $ 5000.
             ambos servicios.-->
@@ -104,12 +118,12 @@
             </div>
         </div>
 
-             <div class="botones">
-       <button type="submit">Enviar</button>
+             <div class="boton">
+                <button type="submit" onclick='Enviar(event)' value='Enviar'>Solicitar</button>
 
       <!--  <input type="submit" id="btn" name="btn" value="Enviar">-->
     </div>
-    </div>
+</div>
         <form>    
 
    <script>src="js/formulario.js"</script>

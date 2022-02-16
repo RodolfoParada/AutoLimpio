@@ -56,4 +56,37 @@ function Enviar(e){
   
   
   }
+
+  function calcular(e){
+    e.preventDefault();
+
+  const boton = document.getElementById("btnCalcular");
+  boton.addEventListener("click",() => {
+
+  const lavadoExterior = $("lavadoExterior").prop("checked");
+  const lavadoMotor = $("lavadoExterior").prop("checked");
+  let montoNeto = 0;
+
+  if(lavadoExterior){
+    montoNeto = montoNeto +7000;
+
+  }
+  if (lavadoMotor){
+
+    montoNeto = montoNeto +5000;
+  }
+
+  const impuesto = montoNeto * 0.19;
+  const total = montoNeto + impuesto;
+
+  document.getElementsById("neto").innerHTML = '<span>${montoNeto}</span>';
+  document.getElementsById("iva").innerHTML = '<span>${impuesto}</span>';
+  document.getElementsById("total").innerHTML = '<span>${total}</span>';
+
+});
+
+  }
+
   
+
+

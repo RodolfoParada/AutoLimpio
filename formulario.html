@@ -2,19 +2,20 @@
 <html>
 <head>
     <meta charset="utf-8"/>
-    <title>Evaluación Practica</title>
+    <title>Formulario de Contacto</title>
     <link rel="stylesheet" href="formulario.css"/>
     
 </head>
 <body>
-
-
-
-    <!--recuerden siempre envolver el formulario con la etiqueta form-->
+    
     <div class  ="container">
     <form action="" name="formulario"method="GET"><!--los métodos más habituales son GET y Post-->
         <div class="formulario">
             <form action="" method="get">
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
+                <br><br><br><br><br>
                 <h1>Formularios de Registro</h1>
                 <br/>
                 <div class="input-group">
@@ -97,18 +98,18 @@
                 </label>
                   </div>
         
-              <button id="btncalcular" type="button">Calcular</button>
+              <button id="btncalcular" type="button" onclick='calcular(event)'class="btn btn-primary">Calcular</button>
                 </form>
                 <div class="row">
                     <div class="col-1">Neto</div>
-                    <div id="neto" class="col-1">$</div>
+                    <div id="neto" class="col-2">$</div>
                     <div class="col-1">IVA</div>
-                    <div id="iva"class="col-1">$</div>
+                    <div id="iva"class="col-2">$</div>
                     <div class="col-1">TOTAL</div>
-                    <div id="total"class="col-1">$</div>
+                    <div id="total"class="col-2">$</div>
 
                 </div>
-            </div>
+            
         <!-- lavado exterior con un valor de $ 7000.
             lavado de motor con un valor de $ 5000.
             ambos servicios.-->
@@ -116,7 +117,7 @@
             donde el usuario lo seleccionará para luego registrar la fecha y hora 
              de los servicios-->        
             </div>
-        </div>
+        
 
              <div class="boton">
                 <button type="submit" onclick='Enviar(event)' value='Enviar'>Solicitar</button>
@@ -124,7 +125,11 @@
       <!--  <input type="submit" id="btn" name="btn" value="Enviar">-->
     </div>
 </div>
-        <form>    
+        <form>
+            
+            <footer class="bg-dark text-center text-light p-3">
+                <p> AutoLimpio 2022.Sin derechos reservados.</p>
+               </footer>         
 
    <script>src="js/formulario.js"</script>
 

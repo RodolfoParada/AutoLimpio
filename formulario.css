@@ -7,14 +7,21 @@
 }
 
 body {
-background-color:green;    
-margin: 0 auto;
-width:300px;
+    
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-image: url(assets/img/5.jpg);
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: #fff;
+    }
 
 
 
 
-}
 
 div.formulario {
     width: 300px;

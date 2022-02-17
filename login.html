@@ -21,7 +21,7 @@
             <div class="message">
                 <h2>Bienvenido a AutoLimpio</h2>
                 <p>Si ya tienes una cuenta por favor inicia sesion aqui</p>
-                <button class="sign-up-btn">Iniciar Sesion</button>
+                <button class="sign-up-btn" id="ingresar" onclick='Iniciar(event)' >Iniciar Sesion</button>
             </div>
         </div>
         <form class="formulario">
@@ -38,10 +38,11 @@
                 </div>
             </div>
             <p class="cuenta-gratis">Crear una cuenta gratis</p>
-            <input type="text" placeholder="Nombre">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Contraseña">
-            <input type="button" value="Registrarse">
+            <input type="text" id="usuario" placeholder="Nombre">
+            <input type="email" id="email" placeholder="Email">
+            <input type="password" id="password" placeholder="Contraseña">
+           <!-- <input type="button" value="Registrarse">-->
+            <button type="submit" onclick='login(event)' value='' >Registrarse</button>
         </form>
     </div>
     <div class="container-form sign-in">
@@ -61,17 +62,24 @@
             <p class="cuenta-gratis">¿Aun no tienes una cuenta?</p>
             <input type="email" placeholder="Email">
             <input type="password" placeholder="Contraseña">
-            <input type="button" value="Iniciar Sesion">
+            <!--<input type="button" value="Iniciar Sesion">-->
+            <button id="button "type="submit"  value='' >Registrese</button>
+            
         </form>
         <div class="welcome-back">
             <div class="message">
                 <h2>Bienvenido de nuevo</h2>
                 <p>Si aun no tienes una cuenta por favor registrese aqui</p>
-                <button class="sign-in-btn">Registrarse</button>
+             <button class="sign-in-btn">Registrarse</button>
+               
+             <!---   <button type="submit" onclick='Iniciar(event)' value='' >Iniciar Sesion</button>-->
+            
+             
+          
             </div>
         </div>
     </div>
-    <script src="script.js"></script>
+    <script src="login.js"></script>
 
 
 

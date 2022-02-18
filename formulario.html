@@ -9,7 +9,7 @@
 <body>
     
     <div class  ="container">
-    <form action="" name="formulario"method="GET"><!--los métodos más habituales son GET y Post-->
+    <form action="" id="formulario" name="formulario"method="GET"><!--los métodos más habituales son GET y Post-->
         <div class="formulario">
             <form action="" method="get">
                 <br><br><br><br><br>
@@ -20,8 +20,8 @@
                 <br/>
                 <div class="input-group">
                     <label for="rut">Rut</label>
-                    <input type="number" id="rut" name="RUT"  placeholder="Ingrese su RUT"/>      
-                    <input type="number" id="dv" name="dv" required class="form-control" placeholder="dv" min= "0" max="1"/>  
+                    <input type="number" id="rut" name="RUT"   placeholder="Ingrese su RUT"  />      
+                    <input type="number"  id="dv" name="dv" required class="form-control" placeholder="dv" pattern="{1,1}" />  
               
                 </div>  
 
@@ -131,9 +131,9 @@
                 <p> AutoLimpio 2022.Sin derechos reservados.</p>
                </footer>         
 
-   <script>src="js/formulario.js"</script>
+   <script src="formulario.js"></script>
 
-    <!--<script src="holamundo.js"></script>-->
+   
 </body>
 </html>
 

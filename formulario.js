@@ -1,20 +1,119 @@
+   const rut = document.getElementById('rut').value;
+   const dv =  document.getElementById('dv').value;
+   const nombre =  document.getElementById('nombre').value;
+   const apellido =  document.getElementById('apellido').value;
+   const comuna =  document.getElementById('comuna').value;
+   const TipoVehiculo =  document.getElementById('TipoVehiculo').value;
+   const marca =  document.getElementById('marca').value;
+   const año =  document.getElementById('año').value;
+   const RevisionTecnica =  document.getElementById('RevisionTecnica').value;
+   
 
-function Enviar(e){
-    e.preventDefault();
-  
-   let rut = document.getElementById('rut').value;
-   let dv =  document.getElementById('dv').value;
-   let nombre =  document.getElementById('nombre').value;
-   let apellido =  document.getElementById('apellido').value;
-   let comuna =  document.getElementById('comuna').value;
-   let TipoVehiculo =  document.getElementById('TipoVehiculo').value;
-   let marca =  document.getElementById('marca').value;
-   let año =  document.getElementById('año').value;
-   let RevisionTecnica =  document.getElementById('RevisionTecnica').value;
-  
-    if(rut.value === null  || rut.value === ''){
-      mensajesError.push('ingresa tu Rut');   
+   function ValidarRut(){
+    document.getElementById("rut").addEventListener("blur", (e) => {
+      const rut = parseInt( document.getElementById("rut").value );
+      
+      // NaN (not a number) 
+      if( isNaN(rut) ) {
+        // es que hay un error en lo que introdujo el usuario
+        console.error("el RUT no es número válido");
+      }
+      
+      if( rut.length <= 8) {
+        // es válido 
+      } else {
+        // NO es válido 
+        console.error("el RUT está fuera de rango.");
+      }
+    });
     }
+    document.getElementById("dv").addEventListener("blur", (e) => {
+      const dv = document.getElementById("dv").value;
+      const permitidos = ['0', '1','2','3','4','5','6','7','8','9','k','K'];
+      
+      if( !permitidos.includes(dv) ) {
+        // muestro mensaje de error
+        console.error("Dígito verificador NO permitido!!!");
+      }
+    });
+    
+ 
+    
+    
+
+      const nombre = document.getElementById("nombre").value;	
+      const apellido = document.getElementById("apellido").value;	
+      const mensajes = [];
+      
+      const validacionNombre = validarNombre(nombre);
+      if( validacionNombre.length > 0 ) {
+        mensajes.push( validacionNombre );
+      }
+      
+      const validacionApellido = validarApellido(apellido);
+      if( validacionApellido.length > 0 ) {
+        mensajes.push( validacionApellido );
+      }
+      
+      if( mensajes.length == 0 ) {
+        guardarDatosContacto(nombre, apellido);
+      } else {
+        document.getElementById("mensajes").innerHTML = mensajes.join(". ");
+      }
+      
+    
+    function validarNombre(nombre) {
+      if(nombre.length > 30) {
+        return "";
+      } else {
+        return "incorporar otra vez.";
+      }
+    }
+    
+    function validarApellido(apellido) {
+      if(apellido.length > 30) {
+        return "";
+      } else {
+        return "incorporar otra vez..";
+      }
+    }
+     //validar 80 digitos .
+    function validarDireccion(apellido) {
+      if(direccion.length > 80) {
+        return "";
+      } else {
+        return "incorporar otra vez.";
+      }
+    }
+
+ //validar 20 digitos letras.
+    function validarMarca(marca) {
+      if(marca.length > 20) {
+        return "";
+      } else {
+        return "incorporar otra vez.";
+      }
+    }
+    
+    //validar 20 letras.
+    function validarMarca(marca) {
+      if(marca.length > 20) {
+        return "";
+      } else {
+        return "incorporar otra vez.";
+      }
+    }
+
+     //validar 20 letras.
+     function validarAño(marca) {
+      if(marca.length > 4) {
+        return "";
+      } else {
+        return "incorporar otra vez.";
+      }
+    }
+    
+    
     if(dv.value === null || dv.value === ''){
       mensajesError.push('ingresa tu Digito Verificador');
     }
@@ -52,10 +151,6 @@ function Enviar(e){
   console.log(año);
   console.log(RevisionTecnica);
 
-    return false;
-  
-  
-  }
 
   function calcular(e){
     e.preventDefault();
@@ -85,7 +180,10 @@ function Enviar(e){
 
 });
 
+  
   }
+
+
 
   
 

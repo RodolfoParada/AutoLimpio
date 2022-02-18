@@ -1,3 +1,26 @@
+/*Validar
+
+1)  Rut  	: Solo números	8 dígitos.
+2)	Digito verificador	: Números, k y K.	1 dígito.
+3)	Nombre	: Solo letras. 	30 dígitos.
+4)	Apellido	: Solo letras.	30 dígitos.
+5)	Dirección	: Letras, números y espacios.	80 dígitos.
+6)	Comuna	: OMITIR.
+
+8.	Para los vehículos son:
+
+a)	Tipo de Vehículo (furgón, automóvil, camión, camioneta y moto)	: OMITIR.
+b)	Marca	: Solo letras	20 dígitos.
+c)	Modelo	: Solo letras.	20 dígitos.
+d)	Año	: Solo números.	4 dígitos.
+e)	Revisión técnica al día	: OMITIR.
+   10.	Calcular el total a pagar CON impuesto (19%), de los servicios realizados al 
+   automóvil del cliente y enviar un mensaje señalando el nombre del cliente junto con 
+   el total a pagar. Utilizar un botón para realizar el cálculo.
+   
+  */ 
+  
+   
    const rut = document.getElementById('rut').value;
    const dv =  document.getElementById('dv').value;
    const nombre =  document.getElementById('nombre').value;
@@ -112,7 +135,14 @@
         return "incorporar otra vez.";
       }
     }
-    
+       //validar 20 letras.
+       function validarAño(marca) {
+        if(marca.length > 4) {
+          return "";
+        } else {
+          return "incorporar otra vez.";
+        }
+      }
     
     if(dv.value === null || dv.value === ''){
       mensajesError.push('ingresa tu Digito Verificador');

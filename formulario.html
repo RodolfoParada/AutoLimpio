@@ -20,22 +20,27 @@
                 <br/>
                 <div class="input-group">
                     <label for="rut">Rut</label>
-                    <input type="number" id="rut" name="RUT"   placeholder="Ingrese su RUT"  />      
-                    <input type="number"  id="dv" name="dv" required class="form-control" placeholder="dv" pattern="{1,1}" />  
+                    <input type="input" id="rut" name="RUT"   placeholder="Ingrese su RUT" maxlength="8" onkeypress="return isNumberKey(event)"/>      
+                    <input type="input"  id="dv" name="dv" required class="form-control" placeholder="dv" maxlength="1" pattern="{1,1}" onkeypress="return isNumberKey(event)" />  
               
                 </div>  
 
                 <div class="form-line">
                 <label for="nombre">Nombre</label>
-                <input type="text" id="nombre" name="nombre" placeholder="Ingrese su nombre"/>
+                <input type="input" id="nombre" name="nombre" maxlength="30" placeholder="Ingrese su nombre"/>
                 
             </div>
 
 
             <div class="form-line">
             <label for="Apellido">Apellido</label>
-            <input type="text" id="apellido" name="apellido" placeholder="Ingrese su apellido"/>
+            <input type="input" id="apellido" name="apellido" maxlength="30" placeholder="Ingrese su apellido"/>
              </div>
+
+             <div class="form-line">
+                <label for="Direccion">Direccion</label>
+                <input type="input" id="direccion" name="direccion" maxlength="80" placeholder="Ingrese su direccion"/>
+                 </div>
 
                 <div class="form-line">
                     <label for="Comuna" id="comuna">Comuna</label>
@@ -67,11 +72,11 @@
 
                     <div class="form-line">
                     <label for="Marca">Marca</label>
-                    <input type="text" id="marca" name="marca" placeholder="Ingrese marca del vehiculo"/>
+                    <input type="input" id="marca" name="marca" maxlength="20" placeholder="Ingrese marca del vehiculo"/>
                     </div>
                     <div class="form-line">
                         <label for="Año">Año</label>
-                        <input type="number" id="año" name="año" placeholder="Ingrese año del vehiculo"/>
+                        <input type="input" id="año" name="año" maxlength="4" onkeypress="return isNumberKey(event)" placeholder="Ingrese año del vehiculo"/>
                     </div>
 
                     <div class="form-line">
@@ -83,7 +88,7 @@
               
         
         <h3>Seleccione el tipo de servicio que requiere.</h3>
-        <h4>*puede seleccionar ambas alternativas con Ctrl*<h4>
+        <h4>puede seleccionar ambas alternativas con Ctrl<h4>
         <h4>Lista de Precios<h4></h4>
 
         <div class= "form-check">
@@ -91,7 +96,7 @@
                 <label class="form-check-label" for="lavadoMotor">
                   lavado motor $7.000.-
                 </label>
-            <div class="form-check">
+            <div class="form-check"> 
                 <input class="form-check-input" type="checkbox" value="5000" id="lavadoMotor">
                 <label class="form-check-label" for="lavadoMotor">
                   lavado motor $5.000.-
@@ -133,7 +138,14 @@
 
    <script src="formulario.js"></script>
 
-   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+   <script>
+
+
+
+
+
+   </script>
 </body>
 </html>
-

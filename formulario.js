@@ -59,36 +59,63 @@ function setInputFilter(textbox, inputFilter) {
 
 
 
-  function calcular(e){
+  function Calcular(e){
     e.preventDefault();
 
-  const boton = document.getElementById("btnCalcular");
-  boton.addEventListener("click",() => {
+ // const boton = document.getElementById("btnCalcular");
+  //boton.addEventListener("click",() => {-->
+  //const lavadoExterior = $("lavadoExterior").prop("checked");
+  //const lavadoMotor = $("lavadoExterior").prop("checked");
+  //let montoNeto = 0;
 
-  const lavadoExterior = $("lavadoExterior").prop("checked");
-  const lavadoMotor = $("lavadoExterior").prop("checked");
-  let montoNeto = 0;
-
-  if(lavadoExterior){
-    montoNeto = montoNeto +7000;
-
-  }
-  if (lavadoMotor){
-
-    montoNeto = montoNeto +5000;
-  }
-
-  const impuesto = montoNeto * 0.19;
-  const total = montoNeto + impuesto;
-
-  document.getElementsById("neto").innerHTML = '<span>${montoNeto}</span>';
-  document.getElementsById("iva").innerHTML = '<span>${impuesto}</span>';
-  document.getElementsById("total").innerHTML = '<span>${total}</span>';
-
-});
+  const lavadoExterior = document.getElementById('lavadoExterior').value;
+  const lavadoMotor =  document.getElementById('lavadoMotor').value;
+  const montoNeto = 0;
+  const total = 0;
+  const iva =  montoNeto * 0.19;
+  const precio1 = 7000;
+  const precio2 = 5000;
+  const precio = 0;
 
   
+  if(lavadoExterior.value === null  || lavadoExterior.value === ''){
+    mensajesError.push('Selecciona servicio');
   }
+
+  if(lavadoMotor.value === null || lavadoMotor.value === ''){
+    mensajesError.push('Selecciona servicio');
+  
+  }
+
+
+  if(lavadoExterior){
+   precio = iva * precio1;
+
+  }
+   if (lavadoMotor){
+  precio = iva * precio2;
+  
+   }
+   else{
+   montoNeto =  iva + precio;
+
+
+
+   }
+
+
+  
+  total = montoNeto + iva;
+
+
+ document.getElementsById("neto").innerHTML = '<span>${montoNeto}</span>';
+ document.getElementsById("iva").innerHTML = '<span>${iva}</span>';
+document.getElementsById("total").innerHTML = '<span>${total}</span>';
+
+};
+
+  
+  
 
 
 
